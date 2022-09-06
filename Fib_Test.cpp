@@ -9,12 +9,20 @@ namespace FibTest
 	TEST_CLASS(FibTest)
 	{
 	public:
+
+		TEST_METHOD(Test_FIB_LALL) {
+			uint64_t* fib = new uint64_t[40];
+			Fibanachi_Last A;
+			Fibanachi_ALL  B;
+			B.fibanachi_all(fib, 40);
+			Assert::IsTrue(fib[15]== A.fibanachi_last(15));
+		}
 		
 		TEST_METHOD(Test_FIB_ALL)
 		{
-			uint64_t* fib = new uint64_t[16];
+			uint64_t* fib = new uint64_t[40];
 			Fibanachi_ALL  B;
-	        B.fibanachi_all(fib, 16);
+	        B.fibanachi_all(fib, 40);
 			Assert::IsTrue(fib[0] == 0);
 			Assert::IsTrue(fib[1] == 1);
 			Assert::IsTrue(fib[2] == 1);
